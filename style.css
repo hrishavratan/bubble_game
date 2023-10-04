@@ -32,7 +32,11 @@ main{
     justify-content: center;
     gap:100px;
 }
-
+@media (max-width:480px) {
+    #top{
+        gap:40px;
+    }
+}
 .data{
     display:flex;
     gap:5px;
