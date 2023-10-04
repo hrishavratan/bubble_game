@@ -87,3 +87,34 @@ main{
     bottom:10%;
     right:10%;
 }
+
+
+
+
+
+
+#pau{
+    height:25%;
+    width:25%;
+    background-color: brown;
+    border-radius: 30px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+#pau:hover{
+    cursor: pointer;
+}
+#pau:active{
+    transform: scale(0.9);
+    transition-duration: 500ms;
+}
+@media (max-width:768px) 
+{
+    #pau{
+        width: 200px;
+    }
+}

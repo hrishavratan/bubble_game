@@ -4,26 +4,24 @@ var hit = 0;
 var mob = window.matchMedia("(max-width: 480px)");
 var ob = window.matchMedia("(max-width: 351px)");
 
-function bubble(mob,ob) {
+function bubble(mob, ob) {
     if (ob.matches) {
         var bub = document.querySelector("#bot");
         var bubls = "";
-        for (let i = 0; i <48; i++) {
+        for (let i = 0; i < 48; i++) {
             bubls += `<div class="bubble">${Math.floor(Math.random() * 10)} </div>`;
         }
         bub.innerHTML = bubls;
     }
-    else if(mob.matches)
-    {
+    else if (mob.matches) {
         var bub = document.querySelector("#bot");
         var bubls = "";
-        for (let i = 0; i <56; i++) {
+        for (let i = 0; i < 56; i++) {
             bubls += `<div class="bubble">${Math.floor(Math.random() * 10)} </div>`;
         }
         bub.innerHTML = bubls;
     }
-    else 
-    {
+    else {
         var bub = document.querySelector("#bot");
         var bubls = "";
         for (let i = 0; i < 225; i++) {
@@ -58,17 +56,17 @@ function inr(sr) {
     return sr += 10;
 }
 
-document.querySelector("#bot").addEventListener("click", function (dets) 
-{
-        if (Number(dets.target.textContent) === hit) {
-            score = inr(score);
-            document.querySelector("#sr").textContent = score;
-            ghit();
-            bubble();
-        }
+document.querySelector("#bot").addEventListener("click", function (dets) {
+    if (Number(dets.target.textContent) === hit) {
+        score = inr(score);
+        document.querySelector("#sr").textContent = score;
+        ghit();
+        bubble(mob, ob);
+    }
 })
 
-
-bubble(mob,ob);
-runt();
-ghit();
+document.querySelector("#pau").addEventListener("click", function () {
+    bubble(mob, ob);
+    runt();
+    ghit();
+})
